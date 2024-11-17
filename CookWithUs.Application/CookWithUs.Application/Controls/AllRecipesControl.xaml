@@ -1,0 +1,21 @@
+﻿<UserControl
+    x:Class="CookWithUs.Application.Windows.AllRecipesControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:CookWithUs.Application.Windows"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="clr-namespace:CookWithUs.Application.ViewModels.DataStructures"
+    mc:Ignorable="d">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <ItemsControl Margin="0,0,20,0" ItemsSource="{Binding}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Expander Margin="0,0,0,20" Header="{Binding Title}">
+                        <ItemsControl ItemTemplate="{StaticResource RecipeBlock}" ItemsSource="{Binding Recipes}" />
+                    </Expander>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </ScrollViewer>
+</UserControl>
